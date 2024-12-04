@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Biodata</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css"
+    />
+    <link rel="stylesheet" href="/Css/styles.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Mobile Menu Toggle
+        const hamburgerBtn = document.getElementById("hamburger-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        hamburgerBtn.addEventListener("click", function () {
+          // Toggle visibility of the mobile menu
+          mobileMenu.classList.toggle("hidden");
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <div class="flex justify-between items-center p-2 bg-gray-100">
+      <!-- Navbar Menu -->
+      <nav class="main-nav">
+        <ul class="list-none flex gap-6 md:flex hidden">
+          <li>
+            <a class="no-underline hover:bg-[#ddd] p-2" href="index.html"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a class="no-underline hover:bg-[#ddd] p-2" href="biodata.html"
+              >Biodata</a
+            >
+          </li>
+          <li>
+            <a class="no-underline hover:bg-[#ddd] p-2" href="contact_us.html"
+              >Contact Us</a
+            >
+          </li>
+          <li>
+            <a class="no-underline hover:bg-[#ddd] p-2" href="posts.html"
+              >Posts</a
+            >
+          </li>
+          <li>
+            <a class="no-underline hover:bg-[#ddd] p-2" href="creation.html"
+              >Transformers</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Promo Navbar -->
+      <nav class="promo-nav hidden md:flex">
+        <ul class="list-none flex gap-4">
+          <li>
+            <a class="underline hover:text-blue-500 text-sm" href="#">Promo</a>
+          </li>
+          <li>
+            <a class="underline hover:text-blue-500 text-sm" href="#"
+              >Toko Kami</a
+            >
+          </li>
+          <li>
+            <a class="underline hover:text-blue-500 text-sm" href="#"
+              >Hubungi Kami</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Hamburger Icon (Visible on small screens) -->
+      <button
+        class="md:hidden flex flex-col items-center justify-center space-y-1"
+        id="hamburger-btn"
+      >
+        <div class="w-6 h-0.5 bg-gray-800"></div>
+        <div class="w-6 h-0.5 bg-gray-800"></div>
+        <div class="w-6 h-0.5 bg-gray-800"></div>
+      </button>
+    </div>
+
+    <!-- Mobile Menu (Initially Hidden) -->
+    <div class="md:hidden hidden" id="mobile-menu">
+      <ul class="list-none flex flex-col items-center gap-4 p-4 bg-gray-100">
+        <li>
+          <a class="no-underline hover:bg-[#ddd] p-2" href="index.html">Home</a>
+        </li>
+        <li>
+          <a class="no-underline hover:bg-[#ddd] p-2" href="biodata.html"
+            >Biodata</a
+          >
+        </li>
+        <li>
+          <a class="no-underline hover:bg-[#ddd] p-2" href="contact_us.html"
+            >Contact Us</a
+          >
+        </li>
+        <li>
+          <a class="no-underline hover:bg-[#ddd] p-2" href="posts.html"
+            >Posts</a
+          >
+        </li>
+        <li>
+          <a class="no-underline hover:bg-[#ddd] p-2" href="creation.html"
+            >Transformers</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <header class="bg-white p-2">
+      <div
+        class="max-w-[1200px] mx-auto flex justify-between items-center flex-wrap"
+      >
+        <!-- Logo -->
+        <div class="logo flex items-center">
+          <img
+            class="h-10 mr-6"
+            src="/Picture/gramedia-logo.png"
+            alt="Gramedia Logo"
+          />
+        </div>
+
+        <!-- Dropdown Kategori -->
+        <select
+          class="w-full sm:w-[130px] h-[60px] bg-white pl-[20px] pr-[20px] py-[10px] appearance-none bg-[url('data:image/svg+xml')] bg-no-repeat bg-[20px_center] border-solid border-[#cccccc] rounded-[10px] font-bold hover:bg-[#f0f0f0] mb-4 sm:mb-0"
+        >
+          <option>Kategori</option>
+          <!-- Tambahkan lebih banyak opsi sesuai kebutuhan -->
+        </select>
+
+        <!-- Search Bar -->
+        <div
+          class="flex items-center w-full sm:w-[590px] h-[55px] relative mb-4 sm:mb-0"
+        >
+          <i
+            class="fa-regular fa-magnifying-glass absolute left-2 top-[50%] transform -translate-y-1/2 text-gray-500"
+          ></i>
+          <input
+            class="w-full p-[15px] pl-[30px] border border-gray-300 rounded-full hover:border-[#000000]"
+            type="text"
+            placeholder="Cari Produk, Judul Buku, atau Penulis"
+          />
+          <i
+            class="fa-sharp fa-light fa-cart-shopping ml-[20px] font-medium p-[10px] rounded-[20px] hover:bg-[#ebebeb]"
+          ></i>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-wrap items-center space-x-4 sm:space-x-0">
+          <a
+            class="mx-[10px] px-[20px] py-[15px] rounded-[10px] no-underline text-[14px] font-bold bg-white text-[#4e4e4e] border border-solid border-[#cccbcb] hover:border-[#000000] hover:bg-[#f0f0f0]"
+            href="#"
+            >Masuk</a
+          >
+          <a
+            class="px-[20px] py-[15px] rounded-[10px] no-underline text-[14px] font-bold bg-[#035eb8] text-white hover:bg-[#054381]"
+            href="#"
+            >Daftar</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <hr />
+
+    <main class="container mx-auto p-6">
+      <div class="bg-white p-4 shadow rounded">
+        <h2 class="text-2xl font-bold mb-4">Personal Information</h2>
+        <img
+          src="/Picture/image.jpg"
+          alt="Profile Photo"
+          class="rounded-full mx-auto mb-4"
+        />
+        <ul class="space-y-2">
+          <li><strong>Name:</strong> Andrew</li>
+          <li><strong>Student ID:</strong> 2381020</li>
+          <li><strong>Faculty:</strong> FTI UNAI</li>
+          <li><strong>Hobbies:</strong> Coding, Gaming</li>
+          <li><strong>Skills:</strong> Drawing, Cooking</li>
+        </ul>
+      </div>
+
+      <div class="bg-gray-200 p-4 mt-6 shadow rounded">
+        <h2 class="text-2xl font-bold mb-4">Testimonial</h2>
+        <p>
+          "Being part of this class has helped me improve my coding skills and
+          understand web development better."
+        </p>
+      </div>
+    </main>
+
+    <footer
+      class="bg-[#f8f8f8] font-[Arial,_sans-serif] px-[0] py-[40px] mt-[60px] -mb-[100px] w-screen relative left-2/4 right-2/4 -ml-[50vw] -mr-[50vw] box-border [border-top:1px_solid_#e0e0e0]"
+    >
+      <!-- Logo dan Tagline -->
+      <div class="bg-[white] p-[30px] -mt-[40px]">
+        <div
+          class="max-w-[1200px] w-full mx-[auto] my-[0] px-[24px] py-[0] box-border grid grid-cols-[auto_1fr] gap-[20px] items-center [@media(max-width:768px)]:flex-col [@media(max-width:768px)]:text-center [@media(max-width:768px)]:gap-[16px]"
+        >
+          <div class="footer-logo">
+            <img
+              class="h-[42px]"
+              src="/Picture/gramedia-logo.png"
+              alt="Gramedia.com"
+            />
+          </div>
+          <div
+            class="text-[#666] text-[18px] leading-normal font-bold justify-self-end"
+          >
+            Toko buku online terbesar, terlengkap dan terpercaya di Indonesia
+          </div>
+        </div>
+      </div>
+
+      <!-- Menu Footer -->
+      <div class="px-[0] py-[40px] w-full">
+        <div
+          class="max-w-[1200px] w-full mx-[auto] my-[0] px-[24px] py-[0] box-border"
+        >
+          <div
+            class="grid grid-cols-[repeat(5,_1fr)] gap-[32px] w-full [/*_Responsive_Design_*/@media(max-width:1024px)]:grid-cols-[repeat(3,_1fr)] [@media(max-width:768px)]:grid-cols-[repeat(2,_1fr)] [@media(max-width:768px)]:gap-[24px] [@media(max-width:480px)]:grid-cols-[1fr]"
+          >
+            <div class="footer-section">
+              <h3 class="text-[#333] text-[16px] font-semibold mb-[20px]">
+                Produk Gramedia
+              </h3>
+              <ul class="[list-style:none] p-0 m-0">
+                <li class="mb-[12px]">
+                  <a
+                    class="text-[#666] underline text-[14px] [transition:color_0.2s_ease] hover:text-[#035eb8]"
+                    href="#"
+                    >Gramedia Affiliate</a
+                  >
+                </li>
+                <li class="mb-[12px]">
+                  <a
+                    class="text-[#666] underline text-[14px] [transition:color_0.2s_ease] hover:text-[#035eb8]"
+                    href="#"
+                    >Mitra Gramedia</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="footer-section">
+              <h3 class="text-[#333] text-[16px] font-semibold mb-[20px]">
+                Informasi Belanja
+              </h3>
+              <ul class="[list-style:none] p-0 m-0">
+                <li class="mb-[12px]">
+                  <a
+                    class="text-[#666] underline text-[14px] [transition:color_0.2s_ease] hover:text-[#035eb8]"
+                    href="#"
+                    >Berbelanja</a
+                  >
+                </li>
+                <li class="mb-[12px]">
+                  <a
+                    class="text-[#666] underline text-[14px] [transition:color_0.2s_ease] hover:text-[#035eb8]"
+                    href="#"
+                    >Pembayaran</a
+                  >
+                </li>
+                <li class="mb-[12px]">
+                  <a
+                    class="text-[#666] underline text-[14px] [transition:color_0.2s_ease] hover:text-[#035eb8]"
+                    href="#"
+                    >Pengiriman</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="footer-section">
+              <h3 class="text-[#333] text-[16px] font-semibold mb-[20px]">
+                Tentang Gramedia
+              </h3>
+              <ul class="[list-style:none] p-0 m-0">
+                <li class="mb-[12px]">
+                  <a
+                    class="text-[#666] underline text-[14px] [transition:color_0.2s_ease] hover:text-[#035eb8]"
+                    href="#"
+                    >Tentang Kami</a
+                  >
+                </li>
+                <li class="mb-[12px]">
+                  <a
+                    class="text-[#666] underline text-[14px] [transition:color_0.2s_ease] hover:text-[#035eb8]"
+                    href="#"
+                    >Toko Kami</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="footer-section">
+              <h3 class="text-[#333] text-[16px] font-semibold mb-[20px]">
+                Lainnya
+              </h3>
+              <ul class="[list-style:none] p-0 m-0">
+                <li class="mb-[12px]">
+                  <a
+                    class="text-[#666] underline text-[14px] [transition:color_0.2s_ease] hover:text-[#035eb8]"
+                    href="#"
+                    >Blog</a
+                  >
+                </li>
+                <li class="mb-[12px]">
+                  <a
+                    class="text-[#666] underline text-[14px] [transition:color_0.2s_ease] hover:text-[#035eb8]"
+                    href="#"
+                    >Kebijakan Privasi</a
+                  >
+                </li>
+                <li class="mb-[12px]">
+                  <a
+                    class="text-[#666] underline text-[14px] [transition:color_0.2s_ease] hover:text-[#035eb8]"
+                    href="#"
+                    >Hubungi Kami</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div
+              class="col-[span_1] [/*_Responsive_Design_*/@media(max-width:1024px)]:col-[span_3] [@media(max-width:768px)]:col-[span_2] [@media(max-width:480px)]:col-[span_1]"
+            >
+              <h3>Aplikasi Seluler Kami</h3>
+              <p class="text-[#666] text-[14px] leading-normal mb-[16px]">
+                Download aplikasi Gramedia.com yang tersedia di seluruh
+                perangkat iOS dan Android
+              </p>
+              <div
+                class="grid grid-cols-[repeat(2,_auto)] gap-[12px] [@media(max-width:480px)]:justify-center"
+              >
+                <a href="#"
+                  ><img
+                    class="h-[40px] rounded-[6px]"
+                    src="/Picture/apple-app-store.jpg"
+                    alt="Download on App Store"
+                /></a>
+                <a href="#"
+                  ><img
+                    class="h-[40px] rounded-[6px]"
+                    src="/Picture/google-play.jpg"
+                    alt="Get it on Google Play"
+                /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-[32px] [border-top:1px_solid_#e0e0e0] w-full">
+        <div
+          class="grid grid-cols-[1fr_auto] gap-[20px] items-center [@media(max-width:480px)]:flex-col [@media(max-width:480px)]:gap-[20px] [@media(max-width:480px)]:text-center"
+        >
+          <div class="text-[#666] text-[14px] ml-20">
+            © 2024 PT Gramedia Asri Media
+          </div>
+          <div
+            class="grid grid-flow-col grid-cols-[repeat(auto-fit,_32px)] gap-[16px] mr-20"
+          >
+            <a class="grid place-items-center w-[32px] h-[32px]" href="#"
+              ><img
+                class="w-[20px] h-[20px]"
+                src="https://static.gramedia.net/_next/static/media/facebook_dark.e85a7e6b.svg"
+                alt="Facebook"
+            /></a>
+            <a class="grid place-items-center w-[32px] h-[32px]" href="#"
+              ><img
+                class="w-[20px] h-[20px]"
+                src="https://static.gramedia.net/_next/static/media/twitterx_dark.f367654e.svg"
+                alt="Twitter"
+            /></a>
+            <a class="grid place-items-center w-[32px] h-[32px]" href="#"
+              ><img
+                class="w-[20px] h-[20px]"
+                src="https://static.gramedia.net/_next/static/media/instagram_dark.318a5108.svg"
+                alt="Instagram"
+            /></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

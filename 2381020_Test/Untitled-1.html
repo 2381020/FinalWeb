@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>User Registration and Survey Form</title>
+  </head>
+  <body>
+    <h1>User Registration and Survey Form</h1>
+
+    <form action="process.php" method="post">
+      <fieldset>
+        <legend>User Information</legend>
+        <label for="fullname">Full Name:</label>
+        <input
+          type="text"
+          placeholder="John Doe"
+          id="fullname"
+          name="fullname"
+          value=""
+        /><br /><br />
+
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          placeholder="john@example.com"
+          id="email"
+          name="email"
+          value=""
+        /><br /><br />
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" /><br /><br />
+
+        <label for="phone">Phone Number:</label>
+        <input
+          type="tel"
+          placeholder="123-456-7890"
+          id="phone"
+          name="phone"
+          value=""
+        /><br /><br />
+      </fieldset>
+
+      <fieldset>
+        <legend>Survey Information</legend>
+        <label for="male">Male:</label>
+        <input type="radio" id="male" name="gender" value="male" /><br />
+        <label for="male">Female:</label>
+        <input
+          type="radio"
+          id="female"
+          name="gender"
+          value="female"
+        /><br /><br />
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" min="1" max="99" /><br /><br />
+
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" /><br /><br />
+
+        <label for="color">Favorite Color:</label>
+        <input
+          type="color"
+          id="color"
+          name="color"
+          value="#00000"
+        /><br /><br />
+
+        <label>Select Your Hobbies:</label><br />
+        <input type="checkbox" id="reading" name="hobbies[]" value="reading" />
+        <label for="traveling">Reading</label>
+        <br />
+        <input
+          type="checkbox"
+          id="traveling"
+          name="hobbies[]"
+          value="traveling"
+        />
+        <label for="traveling">Traveling</label>
+        <br />
+      </fieldset>
+
+      <fieldset>
+        <legend>Scheduling Preferences</legend>
+        <label for="meetingdate">Preferred Meeting Date and Time:</label>
+        <input
+          type="datetime-local"
+          id="meetingdate"
+          name="meetingdate"
+        /><br /><br />
+
+        <label for="deliveryweek">Select Week for Delivery:</label>
+        <input type="week" id="deliveryweek" name="deliveryweek" /><br /><br />
+
+        <label for="projectmonth">Preferred Month for Project:</label>
+        <input type="month" id="projectmonth" name="projectmonth" /><br /><br />
+      </fieldset>
+
+      <fieldset>
+        <legend>Profile Picture</legend>
+        <label for="profilepic">Uploud Profile Picture:</label>
+        <input type="file" id="profilepic" name="profilepic" /><br /><br />
+      </fieldset>
+
+      <input type="hidden" name="studentid" value="your_student_id_here" />
+
+      <fieldset>
+        <legend>Actions</legend>
+        <input type="hidden" name="studentid" value="" />
+        <button type="submit">Submit Form</button><br /><br />
+        <button type="reset">Reset Form</button><br /><br />
+      </fieldset>
+    </form>
+  </body>
+</html>

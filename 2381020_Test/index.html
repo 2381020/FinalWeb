@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GramediaClone - Toko Buku Online Terlengkap</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Mobile Menu Toggle
+        const hamburgerBtn = document.getElementById("hamburger-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        hamburgerBtn.addEventListener("click", function () {
+          // Toggle visibility of the mobile menu
+          mobileMenu.classList.toggle("hidden");
+        });
+      });
+    </script>
+  </head>
+  <body class="font-[Arial,_sans-serif] m-0 p-0 bg-[#ffffff]">
+    <div class="flex justify-between items-center p-2 bg-gray-100">
+      <!-- Navbar Menu -->
+      <nav class="main-nav">
+        <ul class="list-none flex gap-6 md:flex hidden">
+          <li>
+            <a class="no-underline hover:bg-[#ddd] p-2" href="index.html"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a class="no-underline hover:bg-[#ddd] p-2" href="biodata.html"
+              >Biodata</a
+            >
+          </li>
+          <li>
+            <a class="no-underline hover:bg-[#ddd] p-2" href="contact_us.html"
+              >Contact Us</a
+            >
+          </li>
+          <li>
+            <a class="no-underline hover:bg-[#ddd] p-2" href="posts.html"
+              >Posts</a
+            >
+          </li>
+          <li>
+            <a class="no-underline hover:bg-[#ddd] p-2" href="creation.html"
+              >Transformers</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Promo Navbar -->
+      <nav class="promo-nav hidden md:flex">
+        <ul class="list-none flex gap-4">
+          <li>
+            <a class="underline hover:text-blue-500 text-sm" href="#">Promo</a>
+          </li>
+          <li>
+            <a class="underline hover:text-blue-500 text-sm" href="#"
+              >Toko Kami</a
+            >
+          </li>
+          <li>
+            <a class="underline hover:text-blue-500 text-sm" href="#"
+              >Hubungi Kami</a
+            >
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Hamburger Icon (Visible on small screens) -->
+      <button
+        class="md:hidden flex flex-col items-center justify-center space-y-1"
+        id="hamburger-btn"
+      >
+        <div class="w-6 h-0.5 bg-gray-800"></div>
+        <div class="w-6 h-0.5 bg-gray-800"></div>
+        <div class="w-6 h-0.5 bg-gray-800"></div>
+      </button>
+    </div>
+
+    <!-- Mobile Menu (Initially Hidden) -->
+    <div class="md:hidden hidden" id="mobile-menu">
+      <ul class="list-none flex flex-col items-center gap-4 p-4 bg-gray-100">
+        <li>
+          <a class="no-underline hover:bg-[#ddd] p-2" href="index.html">Home</a>
+        </li>
+        <li>
+          <a class="no-underline hover:bg-[#ddd] p-2" href="biodata.html"
+            >Biodata</a
+          >
+        </li>
+        <li>
+          <a class="no-underline hover:bg-[#ddd] p-2" href="contact_us.html"
+            >Contact Us</a
+          >
+        </li>
+        <li>
+          <a class="no-underline hover:bg-[#ddd] p-2" href="posts.html"
+            >Posts</a
+          >
+        </li>
+        <li>
+          <a class="no-underline hover:bg-[#ddd] p-2" href="creation.html"
+            >Transformers</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <header class="bg-white p-2">
+      <div
+        class="max-w-[1200px] mx-auto flex justify-between items-center flex-wrap"
+      >
+        <!-- Logo -->
+        <div class="logo flex items-center">
+          <img
+            class="h-10 mr-6"
+            src="/Picture/gramedia-logo.png"
+            alt="Gramedia Logo"
+          />
+        </div>
+
+        <!-- Dropdown Kategori -->
+        <select
+          class="w-full sm:w-[130px] h-[60px] bg-white pl-[20px] pr-[20px] py-[10px] appearance-none bg-[url('data:image/svg+xml')] bg-no-repeat bg-[20px_center] border-solid border-[#cccccc] rounded-[10px] font-bold hover:bg-[#f0f0f0] mb-4 sm:mb-0"
+        >
+          <option>Kategori</option>
+          <!-- Tambahkan lebih banyak opsi sesuai kebutuhan -->
+        </select>
+
+        <!-- Search Bar -->
+        <div
+          class="flex items-center w-full sm:w-[590px] h-[55px] relative mb-4 sm:mb-0"
+        >
+          <i
+            class="fa-regular fa-magnifying-glass absolute left-2 top-[50%] transform -translate-y-1/2 text-gray-500"
+          ></i>
+          <input
+            class="w-full p-[15px] pl-[30px] border border-gray-300 rounded-full hover:border-[#000000]"
+            type="text"
+            placeholder="Cari Produk, Judul Buku, atau Penulis"
+          />
+          <i
+            class="fa-sharp fa-light fa-cart-shopping ml-[20px] font-medium p-[10px] rounded-[20px] hover:bg-[#ebebeb]"
+          ></i>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex flex-wrap items-center space-x-4 sm:space-x-0">
+          <a
+            class="mx-[10px] px-[20px] py-[15px] rounded-[10px] no-underline text-[14px] font-bold bg-white text-[#4e4e4e] border border-solid border-[#cccbcb] hover:border-[#000000] hover:bg-[#f0f0f0]"
+            href="#"
+            >Masuk</a
+          >
+          <a
+            class="px-[20px] py-[15px] rounded-[10px] no-underline text-[14px] font-bold bg-[#035eb8] text-white hover:bg-[#054381]"
+            href="#"
+            >Daftar</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <hr />
+
+    <!-- Slider Section with Right Images -->
+    <div
+      class="flex flex-col lg:flex-row max-w-[1200px] mx-auto gap-4 my-[20px]"
+    >
+      <!-- Slider -->
+      <div
+        class="relative w-full lg:w-[70%] h-[420px] overflow-hidden rounded-[2%]"
+      >
+        <div class="flex w-[100%] animate-[slide_12s_infinite]">
+          <img
+            class="w-full h-[420px] object-cover"
+            src="/Picture/slider1.jpg"
+            alt="Slider 1"
+          />
+          <img
+            class="w-full h-[420px] object-cover"
+            src="/Picture/slider2.jpg"
+            alt="Slider 2"
+          />
+          <img
+            class="w-full h-[420px] object-cover"
+            src="/Picture/slider3.jpg"
+            alt="Slider 3"
+          />
+          <img
+            class="w-full h-[420px] object-cover"
+            src="/Picture/slider4.jpg"
+            alt="Slider 4"
+          />
+          <img
+            class="w-full h-[420px] object-cover"
+            src="/Picture/slider5.jpg"
+            alt="Slider 5"
+          />
+        </div>
+      </div>
+
+      <!-- Right Images -->
+      <div class="flex flex-col gap-[20px] w-full lg:w-[33%] pl-[20px]">
+        <img
+          class="w-full h-[200px] object-cover rounded-[7%]"
+          src="/Picture/image1.jpg"
+          alt="Image 1"
+        />
+        <img
+          class="w-full h-[200px] object-cover rounded-[7%]"
+          src="/Picture/image2.jpg"
+          alt="Image 2"
+        />
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="max-w-[1200px] mx-[auto] my-[40px] px-[20px] py-[0]">
+      <div
+        class="grid grid-cols-[repeat(auto-fit,_minmax(120px,_1fr))] gap-[20px] justify-items-center text-center"
+      >
+        <a
+          href="#"
+          class="flex flex-col items-center no-underline text-[#333] p-[20px] rounded-[20px] hover:p-[20px] hover:[box-shadow:0_8px_16px_rgba(0,_0,_0,_0.08)] hover:delay-100"
+        >
+          <img
+            src="/Picture/Icon_category_Buku_Baru.jpg"
+            class="w-[104px] h-[104px] bg-[#f0f9ff] rounded-[12px] p-[12px] mb-[8px]"
+            alt="Buku Baru Andalan"
+          />
+          <span
+            class="font-['Arial',_sans-serif] text-[15px] text-[#4a4a4a] mt-[8px] text-center max-w-[100px]"
+            >Buku Baru Andalan</span
+          >
+        </a>
+        <a
+          href="#"
+          class="flex flex-col items-center no-underline text-[#333] p-[20px] rounded-[20px] hover:p-[20px] hover:[box-shadow:0_8px_16px_rgba(0,_0,_0,_0.08)] hover:delay-100"
+        >
+          <img
+            src="/Picture/Icon_category_Buku_Pilihan.jpg"
+            class="w-[104px] h-[104px] bg-[#f0f9ff] rounded-[12px] p-[12px] mb-[8px]"
+            alt="Buku Fiksi Pilihan"
+          />
+          <span
+            class="font-['Arial',_sans-serif] text-[15px] text-[#4a4a4a] mt-[8px] text-center max-w-[100px]"
+            >Buku Fiksi Pilihan</span
+          >
+        </a>
+        <a
+          href="#"
+          class="flex flex-col items-center no-underline text-[#333] p-[20px] rounded-[20px] hover:p-[20px] hover:[box-shadow:0_8px_16px_rgba(0,_0,_0,_0.08)] hover:delay-100"
+        >
+          <img
+            src="/Picture/Icon_category_Buku_Import.jpg"
+            class="w-[104px] h-[104px] bg-[#f0f9ff] rounded-[12px] p-[12px] mb-[8px]"
+            alt="International Books"
+          />
+          <span
+            class="font-['Arial',_sans-serif] text-[15px] text-[#4a4a4a] mt-[8px] text-center max-w-[100px]"
+            >International Books</span
+          >
+        </a>
+        <a
+          href="#"
+          class="flex flex-col items-center no-underline text-[#333] p-[20px] rounded-[20px] hover:p-[20px] hover:[box-shadow:0_8px_16px_rgba(0,_0,_0,_0.08)] hover:delay-100"
+        >
+          <img
+            src="/Picture/Icon_category_ebook.jpg"
+            class="w-[104px] h-[104px] bg-[#f0f9ff] rounded-[12px] p-[12px] mb-[8px]"
+            alt="Majalah Gramedia"
+          />
+          <span
+            class="font-['Arial',_sans-serif] text-[15px] text-[#4a4a4a] mt-[8px] text-center max-w-[100px]"
+            >Majalah Gramedia</span
+          >
+        </a>
+        <a
+          href="#"
+          class="flex flex-col items-center no-underline text-[#333] p-[20px] rounded-[20px] hover:p-[20px] hover:[box-shadow:0_8px_16px_rgba(0,_0,_0,_0.08)] hover:delay-100"
+        >
+          <img
+            src="/Picture/Icon_category_Voucher_Gramedia_Academy_2.jpg"
+            class="w-[104px] h-[104px] bg-[#f0f9ff] rounded-[12px] p-[12px] mb-[8px]"
+            alt="Gramedia Academy"
+          />
+          <span
+            class="font-['Arial',_sans-serif] text-[15px] text-[#4a4a4a] mt-[8px] text-center max-w-[100px]"
+            >Gramedia Academy</span
+          >
+        </a>
+        <a
+          href="#"
+          class="flex flex-col items-center no-underline text-[#333] p-[20px] rounded-[20px] hover:p-[20px] hover:[box-shadow:0_8px_16px_rgba(0,_0,_0,_0.08)] hover:delay-100"
+        >
+          <img
+            src="/Picture/Icon_category_Print_on_Demand.jpg"
+            class="w-[104px] h-[104px] bg-[#f0f9ff] rounded-[12px] p-[12px] mb-[8px]"
+            alt="Print On Demand"
+          />
+          <span
+            class="font-['Arial',_sans-serif] text-[15px] text-[#4a4a4a] mt-[8px] text-center max-w-[100px]"
+            >Print On Demand</span
+          >
+        </a>
+        <a
+          href="#"
+          class="flex flex-col items-center no-underline text-[#333] p-[20px] rounded-[20px] hover:p-[20px] hover:[box-shadow:0_8px_16px_rgba(0,_0,_0,_0.08)] hover:delay-100"
+        >
+          <img
+            src="/Picture/Icon_category_Alat_Tulis.jpg"
+            class="w-[104px] h-[104px] bg-[#f0f9ff] rounded-[12px] p-[12px] mb-[8px]"
+            alt="Non-Books"
+          />
+          <span
+            class="font-['Arial',_sans-serif] text-[15px] text-[#4a4a4a] mt-[8px] text-center max-w-[100px]"
+            >Non-Books</span
+          >
+        </a>
+      </div>
+    </div>
+
+    <section class="max-w-[1200px] mx-[auto] my-[40px] px-[20px] py-[0]">
+      <div class="mb-[30px] relative">
+        <h2
+          class="text-[24px] font-semibold text-[#333] m-0 font-[system-ui,_-apple-system,_sans-serif]"
+        >
+          Official Store
+        </h2>
+      </div>
+
+      <div
+        class="grid grid-cols-[repeat(auto-fit,_minmax(140px,_1fr))] gap-[24px] [@media(max-width:768px)]:grid-cols-[repeat(auto-fit,_minmax(120px,_1fr))] [@media(max-width:768px)]:gap-[16px]"
+      >
+        <div
+          class="bg-[#ffffff] border-[1px] border-solid border-[#e5e7eb] rounded-[12px] p-[16px] text-center [transition:all_0.3s_ease] cursor-pointer hover:[box-shadow:0_8px_16px_rgba(0,_0,_0,_0.08)] hover:border-[#d1d5db]"
+        >
+          <img
+            src="/Picture/gramedia_gpu.jpg"
+            alt="Gramedia Pustaka Utama"
+            class="w-full h-[80px] object-contain mb-[12px] rounded-[25px] [@media(max-width:768px)]:h-[60px]"
+          />
+          <p class="text-[13px] text-[#4b5563] m-0 font-medium leading-[1.4]">
+            Gramedia Pustaka Utama
+          </p>
+        </div>
+
+        <div
+          class="bg-[#ffffff] border-[1px] border-solid border-[#e5e7eb] rounded-[12px] p-[16px] text-center [transition:all_0.3s_ease] cursor-pointer hover:[box-shadow:0_8px_16px_rgba(0,_0,_0,_0.08)] hover:border-[#d1d5db]"
+        >
+          <img
+            src="/Picture/BRAND_LOGO_.jpg"
+            alt="Gramedia Widiasarana"
+            class="w-full h-[80px] object-contain mb-[12px] rounded-[25px] [@media(max-width:768px)]:h-[60px]"
+          />
+          <p class="text-[13px] text-[#4b5563] m-0 font-medium leading-[1.4]">
+            Gramedia Widiasarana
+          </p>
+        </div>
+
+        <div
+          class="bg-[#ffffff] border-[1px] border-solid border-[#e5e7eb] rounded-[12px] p-[16px] text-center [transition:all_0.3s_ease] cursor-pointer hover:[box-shadow:0_8px_16px_rgba(0,_0,_0,_0.08)] hover:border-[#d1d5db]"
+        >
+          <img
+            src="/Picture/Logo_BIP.jpg"
+            alt="Bhuana Ilmu Populer"
+            class="w-full h-[80px] object-contain mb-[12px] rounded-[25px] [@media(max-width:768px)]:h-[60px]"
+          />
+          <p class="text-[13px] text-[#4b5563] m-0 font-medium leading-[1.4]">
+            Bhuana Ilmu Populer
+          </p>
+        </div>
+
+        <div
+          class="bg-[#ffffff] border-[1px] border-solid border-[#e5e7eb] rounded-[12px] p-[16px] text-center [transition:all_0.3s_ease] cursor-pointer hover:[box-shadow:0_8px_16px_rgba(0,_0,_0,_0.08)] hover:border-[#d1d5db]"
+        >
+          <img
+            src="/Picture/logo_elex.jpg"
+            alt="Elex Media Komputindo"
+            class="w-full h-[80px] object-contain mb-[12px] rounded-[25px] [@media(max-width:768px)]:h-[60px]"
+          />
+          <p class="text-[13px] text-[#4b5563] m-0 font-medium leading-[1.4]">
+            Elex Media Komputindo
+          </p>
+        </div>
+
+        <div
+          class="bg-[#ffffff] border-[1px] border-solid border-[#e5e7eb] rounded-[12px] p-[16px] text-center [transition:all_0.3s_ease] cursor-pointer hover:[box-shadow:0_8px_16px_rgba(0,_0,_0,_0.08)] hover:border-[#d1d5db]"
+        >
+          <img
+            src="/Picture/Logo.jpg"
+            alt="m&c!"
+            class="w-full h-[80px] object-contain mb-[12px] rounded-[25px] [@media(max-width:768px)]:h-[60px]"
+          />
+          <p class="text-[13px] text-[#4b5563] m-0 font-medium leading-[1.4]">
+            m&c!
+          </p>
+        </div>
+
+        <div
+          class="bg-[#ffffff] border-[1px] border-solid border-[#e5e7eb] rounded-[12px] p-[16px] text-center [transition:all_0.3s_ease] cursor-pointer hover:[box-shadow:0_8px_16px_rgba(0,_0,_0,_0.08)] hover:border-[#d1d5db]"
+        >
+          <img
+            src="/Picture/kepustakaan-populer-gramedia.jpg"
+            alt="Kepustakaan Populer Gramedia"
+            class="w-full h-[80px] object-contain mb-[12px] rounded-[25px] [@media(max-width:768px)]:h-[60px]"
+          />
+          <p class="text-[13px] text-[#4b5563] m-0 font-medium leading-[1.4]">
+            Kepustakaan Populer Gramedia
+          </p>
+        </div>
+
+        <div
+          class="bg-[#ffffff] border-[1px] border-solid border-[#e5e7eb] rounded-[12px] p-[16px] text-center [transition:all_0.3s_ease] cursor-pointer hover:[box-shadow:0_8px_16px_rgba(0,_0,_0,_0.08)] hover:border-[#d1d5db]"
+        >
+          <img
+            src="/Picture/i9-ahmpvie.jpg"
+            alt="Phoenix Gramedia Indonesia"
+            class="w-full h-[80px] object-contain mb-[12px] rounded-[25px] [@media(max-width:768px)]:h-[60px]"
+          />
+          <p class="text-[13px] text-[#4b5563] m-0 font-medium leading-[1.4]">
+            Phoenix Gramedia Indonesia
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <main class="max-w-[1200px] mx-[auto] my-8 p-4 bg-[white]">
+      <section class="buku-terlaris">
+        <div class="flex justify-between items-center mb-10">
+          <h2
+            class="text-[24px] font-semibold text-[#333] m-0 font-[system-ui,_-apple-system,_sans-serif]"
+          >
+            Buku Terlaris
+          </h2>
+          <a
+            href="#"
+            class="text-[#1b1b1b] font-medium underline text-[14px] hover:text-[blue]"
+            >Lihat Semua</a
+          >
+        </div>
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-[16px]"
+        >
+          <!-- Buku Peraga Huruf -->
+          <div
+            class="border border-solid border-gray-300 p-4 text-center bg-white relative rounded-lg shadow-md"
+          >
+            <div
+              class="relative h-64 w-full flex items-center justify-center overflow-hidden"
+            >
+              <img
+                class="h-full w-auto object-cover mx-auto"
+                src="/Picture/buku-peraga.jpg"
+                alt="Buku Peraga Huruf"
+              />
+              <button
+                class="absolute top-3 right-3 bg-transparent border-none w-8 h-8 rounded-full flex items-center justify-center cursor-pointer text-gray-500 text-lg"
+              >
+                <i class="fa-sharp-duotone fa-solid fa-heart"></i>
+              </button>
+            </div>
+            <p class="text-xs text-gray-500 mb-2">Ristyanti Nugraheni</p>
+            <h3 class="text-sm font-medium text-gray-800 mb-1 overflow-hidden">
+              Buku Peraga Huruf
+            </h3>
+            <p class="font-semibold text-gray-800 text-base">
+              Rp247.500 <br />
+              <span class="text-red-500 text-xs font-medium">10%</span>
+              <span class="font-semibold text-gray-800 text-base"
+                >Rp275.000</span
+              >
+            </p>
+          </div>
+
+          <!-- Atomic Habits -->
+          <div
+            class="border border-solid border-gray-300 p-4 text-center bg-white relative rounded-lg shadow-md"
+          >
+            <div
+              class="relative h-64 w-full flex items-center justify-center overflow-hidden"
+            >
+              <img
+                class="h-full w-auto object-cover mx-auto"
+                src="/Picture/atomic-habits.jpg"
+                alt="Atomic Habits"
+              />
+              <button
+                class="absolute top-3 right-3 bg-transparent border-none w-8 h-8 rounded-full flex items-center justify-center cursor-pointer text-gray-500 text-lg"
+              >
+                <i class="fa-sharp-duotone fa-solid fa-heart"></i>
+              </button>
+            </div>
+            <p class="text-[12px] text-[#757575] mb-[8px]">James Clear</p>
+            <h3
+              class="text-[14px] font-medium text-[#212121] mb-[4px] overflow-hidden"
+            >
+              Atomic Habits: Perubahan Kecil yang Memberikan Hasil Luar Biasa
+            </h3>
+            <p class="font-semibold text-[#212121] text-[16px]">Rp108.000</p>
+          </div>
+
+          <!-- Angin dari Tebing 2 -->
+          <div
+            class="border-[1px] border-solid border-[#ddd] p-4 text-center bg-[#fff] relative rounded-lg shadow-md"
+          >
+            <div
+              class="relative h-64 w-full flex items-center justify-center overflow-hidden"
+            >
+              <img
+                class="h-full w-auto object-cover mx-auto"
+                src="/Picture/angintebing.jpg"
+                alt="Angin dari Tebing 2"
+              />
+            </div>
+            <button
+              class="absolute top-3 right-3 bg-transparent border-none w-[32px] h-[32px] rounded-full flex items-center justify-center cursor-pointer text-[rgb(126,_126,_126)] text-[20px]"
+            ></button>
+            <p class="text-[12px] text-[#757575] mb-[8px]">Clara Ng</p>
+            <h3
+              class="text-[14px] font-medium text-[#212121] mb-[4px] overflow-hidden"
+            >
+              Angin dari Tebing 2
+            </h3>
+            <p class="font-semibold text-[#212121] text-[16px]">
+              Rp88.900 <br />
+              <span class="text-[#FF4444] text-[12px] font-medium">30%</span>
+              <span class="font-semibold text-[#212121] text-[16px]"
+                >Rp127.000</span
+              >
+            </p>
+          </div>
+
+          <!-- Blue Box 05 -->
+          <div
+            class="border-[1px] border-solid border-[#ddd] p-4 text-center bg-[#fff] relative rounded-lg shadow-md"
+          >
+            <div
+              class="relative h-64 w-full flex items-center justify-center overflow-hidden"
+            >
+              <img
+                class="h-full w-auto object-cover mx-auto"
+                src="/Picture/bluebox.jpg"
+                alt="Blue Box 05"
+              />
+            </div>
+            <button
+              class="absolute top-3 right-3 bg-transparent border-none w-[32px] h-[32px] rounded-full flex items-center justify-center cursor-pointer text-[rgb(126,_126,_126)] text-[20px]"
+            ></button>
+            <p class="text-[12px] text-[#757575] mb-[8px]">Miura Kouji</p>
+            <h3
+              class="text-[14px] font-medium text-[#212121] mb-[4px] overflow-hidden"
+            >
+              Blue Box 05
+            </h3>
+            <p class="font-semibold text-[#212121] text-[16px]">
+              Rp88.900 <br />
+              <span class="text-[#FF4444] text-[12px] font-medium">30%</span>
+              <span class="font-semibold text-[#212121] text-[16px]"
+                >Rp127.000</span
+              >
+            </p>
+          </div>
+
+          <!-- WANGSIT -->
+          <div
+            class="border-[1px] border-solid border-[#ddd] p-4 text-center bg-[#fff] relative rounded-lg shadow-md"
+          >
+            <div
+              class="relative h-64 w-full flex items-center justify-center overflow-hidden"
+            >
+              <img
+                class="h-full w-auto object-cover mx-auto"
+                src="/Picture/wangsit.jpg"
+                alt="WANGSIT(Pawang Soal Sulit) SNBT 2025"
+              />
+            </div>
+            <button
+              class="absolute top-3 right-3 bg-transparent border-none w-[32px] h-[32px] rounded-full flex items-center justify-center cursor-pointer text-[rgb(126,_126,_126)] text-[20px]"
+            ></button>
+            <p class="text-[12px] text-[#757575] mb-[8px]">Tim Tentor Master</p>
+            <h3
+              class="text-[14px] font-medium text-[#212121] mb-[4px] overflow-hidden"
+            >
+              WANGSIT(Pawang<br />
+              Soal Sulit) SNBT 2025
+            </h3>
+            <p class="font-semibold text-[#212121] text-[16px]">
+              Rp88.900 <br />
+              <span class="text-[#FF4444] text-[12px] font-medium">30%</span>
+              <span class="font-semibold text-[#212121] text-[16px]"
+                >Rp127.000</span
+              >
+            </p>
+          </div>
+
+          <!-- Overlord -->
+          <div
+            class="border-[1px] border-solid border-[#ddd] p-4 text-center bg-[#fff] relative rounded-lg shadow-md"
+          >
+            <div
+              class="relative h-64 w-full flex items-center justify-center overflow-hidden"
+            >
+              <img
+                class="h-full w-auto object-cover mx-auto"
+                src="/Picture/overlord.jpg"
+                alt="Overlord 1 - The Undead King"
+              />
+            </div>
+            <button
+              class="absolute top-3 right-3 bg-[#00000000] border-none w-[32px] h-[32px] rounded-full flex items-center justify-center cursor-pointer text-[rgb(126,_126,_126)] text-[20px]"
+            ></button>
+            <p class="text-[12px] text-[#757575] mb-[8px]">Kugane Marumayama</p>
+            <h3
+              class="text-[14px] font-medium text-[#212121] mb-[4px] overflow-hidden"
+            >
+              Overlord 1 - The <br />Undead King
+            </h3>
+            <p class="font-semibold text-[#212121] text-[16px]">Rp135.000</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <section class="mt-[48px]">
+      <div class="flex justify-between items-center mb-10">
+        <h2
+          class="text-[24px] font-semibold text-[#333] m-0 font-[system-ui,_-apple-system,_sans-serif]"
+        >
+          Non Buku Terlaris
+        </h2>
+        <a
+          href="#"
+          class="text-[#1b1b1b] font-medium underline text-[14px] hover:text-[blue]"
+          >Lihat Semua</a
+        >
+      </div>
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-[16px]"
+      >
+        <!-- Buku Peraga Huruf -->
+        <div
+          class="border-[1px] border-solid border-[#ddd] p-4 text-center bg-[#fff] relative rounded-lg shadow-md"
+        >
+          <img
+            class="max-w-full h-auto mx-auto"
+            src="/Picture/concord.jpg"
+            alt="Concorde Hvs A4 70 Gr - Kertas Copy Warna Kuning"
+          />
+          <button
+            class="absolute top-[10px] right-[15px] bg-[#00000000] border-none w-[32px] h-[32px] rounded-[50%] flex items-center justify-center cursor-pointer text-[rgb(126,_126,_126)] text-[20px]"
+          ></button>
+          <p class="text-[12px] text-[#757575] mb-[8px]">Inti Karsa</p>
+          <h3
+            class="text-[14px] font-medium text-[#212121] mb-[4px] overflow-hidden"
+          >
+            Concorde Hvs A4 70 <br />Gr - Kertas Copy Warna Kuning
+          </h3>
+          <p class="font-semibold text-[#212121] text-[16px]">Rp9.000</p>
+        </div>
+
+        <!-- Atomic Habits -->
+        <div
+          class="border-[1px] border-solid border-[#ddd] p-4 text-center bg-[#fff] relative rounded-lg shadow-md"
+        >
+          <img
+            class="max-w-full h-auto mx-auto"
+            src="/Picture/pokemoncard.jpg"
+            alt="Pokemon Game Kartu Koleksi Pengamat Waktu S10D"
+          />
+          <button
+            class="absolute top-[10px] right-[15px] bg-[#00000000] border-none w-[32px] h-[32px] rounded-[50%] flex items-center justify-center cursor-pointer text-[rgb(126,_126,_126)] text-[20px]"
+          ></button>
+          <p class="text-[12px] text-[#757575] mb-[8px]">THE POKEMON COMPANY</p>
+          <h3
+            class="text-[14px] font-medium text-[#212121] mb-[4px] overflow-hidden"
+          >
+            Pokemon Game Kartu Koleksi Pengamat Waktu S10D
+          </h3>
+          <p class="font-semibold text-[#212121] text-[16px]">Rp20.000</p>
+        </div>
+
+        <!-- Angin dari Tebing 2 -->
+        <div
+          class="border-[1px] border-solid border-[#ddd] p-4 text-center bg-[#fff] relative rounded-lg shadow-md"
+        >
+          <img
+            class="max-w-full h-auto mx-auto"
+            src="/Picture/youfit.jpg"
+            alt="Youvit Multivitamin untuk Anak"
+          />
+          <button
+            class="absolute top-[10px] right-[15px] bg-[#00000000] border-none w-[32px] h-[32px] rounded-[50%] flex items-center justify-center cursor-pointer text-[rgb(126,_126,_126)] text-[20px]"
+          ></button>
+          <p class="text-[12px] text-[#757575] mb-[8px]">
+            PT YUPI INDO JELLY GUM
+          </p>
+          <h3
+            class="text-[14px] font-medium text-[#212121] mb-[4px] overflow-hidden"
+          >
+            Youvit Multivitamin untuk Anak
+          </h3>
+          <p class="font-semibold text-[#212121] text-[16px]">Rp21.500</p>
+        </div>
+
+        <!-- Kukiko Swimming Frog Bath Toy -->
+        <div
+          class="border-[1px] border-solid border-[#ddd] p-4 text-center bg-[#fff] relative rounded-lg shadow-md"
+        >
+          <img
+            class="max-w-full h-auto mx-auto"
+            src="/Picture/kukiko.jpg"
+            alt="Kukiko Swimming Frog Bath Toy Sl87044"
+          />
+          <button
+            class="absolute top-[10px] right-[15px] bg-[#00000000] border-none w-[32px] h-[32px] rounded-[50%] flex items-center justify-center cursor-pointer text-[rgb(126,_126,_126)] text-[20px]"
+          ></button>
+          <p class="text-[12px] text-[#757575] mb-[8px]">Kukiko</p>
+          <h3
+            class="text-[14px] font-medium text-[#212121] mb-[4px] overflow-hidden"
+          >
+            Kukiko Swimming Frog Bath Toy Sl87044
+          </h3>
+          <p class="font-semibold text-[#212121] text-[16px]">Rp39.000</p>
+        </div>
+
+        <!-- Kukiko Unicorn Water Gun W609-24D -->
+        <div
+          class="border-[1px] border-solid border-[#ddd] p-4 text-center bg-[#fff] relative rounded-lg shadow-md"
+        >
+          <img
+            class="max-w-full h-auto mx-auto"
+            src="/Picture/unicorn.jpg"
+            alt="Kukiko Unicorn Water Gun W609-24D"
+          />
+          <button
+            class="absolute top-[10px] right-[15px] bg-[#00000000] border-none w-[32px] h-[32px] rounded-[50%] flex items-center justify-center cursor-pointer text-[rgb(126,_126,_126)] text-[20px]"
+          ></button>
+          <p class="text-[12px] text-[#757575] mb-[8px]">Kukiko</p>
+          <h3
+            class="text-[14px] font-medium text-[#212121] mb-[4px] overflow-hidden"
+          >
+            Kukiko Unicorn Water Gun W609-24D
+          </h3>
+          <p class="font-semibold text-[#212121] text-[16px]">Rp29.000</p>
+        </div>
+
+        <!-- Kukiko Unicorn Water Gun W609-22D -->
+        <div
+          class="border-[1px] border-solid border-[#ddd] p-4 text-center bg-[#fff] relative rounded-lg shadow-md"
+        >
+          <img
+            class="max-w-full h-auto mx-auto"
+            src="/Picture/dino.jpg"
+            alt="Kukiko Unicorn Water Gun W609-22D"
+          />
+          <button
+            class="absolute top-[10px] right-[15px] bg-[#00000000] border-none w-[32px] h-[32px] rounded-[50%] flex items-center justify-center cursor-pointer text-[rgb(126,_126,_126)] text-[20px]"
+          ></button>
+          <p class="text-[12px] text-[#757575] mb-[8px]">Kukiko</p>
+          <h3
+            class="text-[14px] font-medium text-[#212121] mb-[4px] overflow-hidden"
+          >
+            Kukiko Unicorn Water Gun W609-22D
+          </h3>
+          <p class="font-semibold text-[#212121] text-[16px]">Rp29.000</p>
+        </div>
+      </div>
+    </section>
+
+    <section></section>
+
+    <footer
+      class="bg-[#f8f8f8] font-[Arial,_sans-serif] px-[0] py-[40px] mt-[60px] -mb-[100px] w-screen relative left-2/4 right-2/4 -ml-[50vw] -mr-[50vw] box-border [border-top:1px_solid_#e0e0e0]"
+    >
+      <!-- Logo dan Tagline -->
+      <div class="bg-[white] p-[30px] -mt-[40px]">
+        <div
+          class="max-w-[1200px] w-full mx-[auto] my-[0] px-[24px] py-[0] box-border grid grid-cols-[auto_1fr] gap-[20px] items-center [@media(max-width:768px)]:flex-col [@media(max-width:768px)]:text-center [@media(max-width:768px)]:gap-[16px]"
+        >
+          <div class="footer-logo">
+            <img
+              class="h-[42px]"
+              src="/Picture/gramedia-logo.png"
+              alt="Gramedia.com"
+            />
+          </div>
+          <div
+            class="text-[#666] text-[18px] leading-normal font-bold justify-self-end"
+          >
+            Toko buku online terbesar, terlengkap dan terpercaya di Indonesia
+          </div>
+        </div>
+      </div>
+
+      <!-- Menu Footer -->
+      <div class="px-[0] py-[40px] w-full">
+        <div
+          class="max-w-[1200px] w-full mx-[auto] my-[0] px-[24px] py-[0] box-border"
+        >
+          <div
+            class="grid grid-cols-[repeat(5,_1fr)] gap-[32px] w-full [/*_Responsive_Design_*/@media(max-width:1024px)]:grid-cols-[repeat(3,_1fr)] [@media(max-width:768px)]:grid-cols-[repeat(2,_1fr)] [@media(max-width:768px)]:gap-[24px] [@media(max-width:480px)]:grid-cols-[1fr]"
+          >
+            <div class="footer-section">
+              <h3 class="text-[#333] text-[16px] font-semibold mb-[20px]">
+                Produk Gramedia
+              </h3>
+              <ul class="[list-style:none] p-0 m-0">
+                <li class="mb-[12px]">
+                  <a
+                    class="text-[#666] underline text-[14px] [transition:color_0.2s_ease] hover:text-[#035eb8]"
+                    href="#"
+                    >Gramedia Affiliate</a
+                  >
+                </li>
+                <li class="mb-[12px]">
+                  <a
+                    class="text-[#666] underline text-[14px] [transition:color_0.2s_ease] hover:text-[#035eb8]"
+                    href="#"
+                    >Mitra Gramedia</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="footer-section">
+              <h3 class="text-[#333] text-[16px] font-semibold mb-[20px]">
+                Informasi Belanja
+              </h3>
+              <ul class="[list-style:none] p-0 m-0">
+                <li class="mb-[12px]">
+                  <a
+                    class="text-[#666] underline text-[14px] [transition:color_0.2s_ease] hover:text-[#035eb8]"
+                    href="#"
+                    >Berbelanja</a
+                  >
+                </li>
+                <li class="mb-[12px]">
+                  <a
+                    class="text-[#666] underline text-[14px] [transition:color_0.2s_ease] hover:text-[#035eb8]"
+                    href="#"
+                    >Pembayaran</a
+                  >
+                </li>
+                <li class="mb-[12px]">
+                  <a
+                    class="text-[#666] underline text-[14px] [transition:color_0.2s_ease] hover:text-[#035eb8]"
+                    href="#"
+                    >Pengiriman</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="footer-section">
+              <h3 class="text-[#333] text-[16px] font-semibold mb-[20px]">
+                Tentang Gramedia
+              </h3>
+              <ul class="[list-style:none] p-0 m-0">
+                <li class="mb-[12px]">
+                  <a
+                    class="text-[#666] underline text-[14px] [transition:color_0.2s_ease] hover:text-[#035eb8]"
+                    href="#"
+                    >Tentang Kami</a
+                  >
+                </li>
+                <li class="mb-[12px]">
+                  <a
+                    class="text-[#666] underline text-[14px] [transition:color_0.2s_ease] hover:text-[#035eb8]"
+                    href="#"
+                    >Toko Kami</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div class="footer-section">
+              <h3 class="text-[#333] text-[16px] font-semibold mb-[20px]">
+                Lainnya
+              </h3>
+              <ul class="[list-style:none] p-0 m-0">
+                <li class="mb-[12px]">
+                  <a
+                    class="text-[#666] underline text-[14px] [transition:color_0.2s_ease] hover:text-[#035eb8]"
+                    href="#"
+                    >Blog</a
+                  >
+                </li>
+                <li class="mb-[12px]">
+                  <a
+                    class="text-[#666] underline text-[14px] [transition:color_0.2s_ease] hover:text-[#035eb8]"
+                    href="#"
+                    >Kebijakan Privasi</a
+                  >
+                </li>
+                <li class="mb-[12px]">
+                  <a
+                    class="text-[#666] underline text-[14px] [transition:color_0.2s_ease] hover:text-[#035eb8]"
+                    href="#"
+                    >Hubungi Kami</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <div
+              class="col-[span_1] [/*_Responsive_Design_*/@media(max-width:1024px)]:col-[span_3] [@media(max-width:768px)]:col-[span_2] [@media(max-width:480px)]:col-[span_1]"
+            >
+              <h3>Aplikasi Seluler Kami</h3>
+              <p class="text-[#666] text-[14px] leading-normal mb-[16px]">
+                Download aplikasi Gramedia.com yang tersedia di seluruh
+                perangkat iOS dan Android
+              </p>
+              <div
+                class="grid grid-cols-[repeat(2,_auto)] gap-[12px] [@media(max-width:480px)]:justify-center"
+              >
+                <a href="#"
+                  ><img
+                    class="h-[40px] rounded-[6px]"
+                    src="/Picture/apple-app-store.jpg"
+                    alt="Download on App Store"
+                /></a>
+                <a href="#"
+                  ><img
+                    class="h-[40px] rounded-[6px]"
+                    src="/Picture/google-play.jpg"
+                    alt="Get it on Google Play"
+                /></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-[32px] [border-top:1px_solid_#e0e0e0] w-full">
+        <div
+          class="grid grid-cols-[1fr_auto] gap-[20px] items-center [@media(max-width:480px)]:flex-col [@media(max-width:480px)]:gap-[20px] [@media(max-width:480px)]:text-center"
+        >
+          <div class="text-[#666] text-[14px] ml-20">
+            © 2024 PT Gramedia Asri Media
+          </div>
+          <div
+            class="grid grid-flow-col grid-cols-[repeat(auto-fit,_32px)] gap-[16px] mr-20"
+          >
+            <a class="grid place-items-center w-[32px] h-[32px]" href="#"
+              ><img
+                class="w-[20px] h-[20px]"
+                src="https://static.gramedia.net/_next/static/media/facebook_dark.e85a7e6b.svg"
+                alt="Facebook"
+            /></a>
+            <a class="grid place-items-center w-[32px] h-[32px]" href="#"
+              ><img
+                class="w-[20px] h-[20px]"
+                src="https://static.gramedia.net/_next/static/media/twitterx_dark.f367654e.svg"
+                alt="Twitter"
+            /></a>
+            <a class="grid place-items-center w-[32px] h-[32px]" href="#"
+              ><img
+                class="w-[20px] h-[20px]"
+                src="https://static.gramedia.net/_next/static/media/instagram_dark.318a5108.svg"
+                alt="Instagram"
+            /></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-center space-x-6 mt-[30px]">
+        <div class="p-[10px] font-bold">
+          <a
+            class="text-[rgb(0,_0,_0)] no-underline px-[20px] py-[15px] hover:text-[white] hover:bg-[rgb(47,_47,_245)] hover:px-[20px] hover:py-[10px] hover:rounded-[10px] hover:[transition:background-color_0.2s_ease] hover:delay-100"
+            href="https://fti.unai.edu"
+            >FTI UNAI</a
+          >
+        </div>
+        <div class="p-[10px] font-bold">
+          <a
+            class="text-[rgb(0,_0,_0)] no-underline px-[20px] py-[15px] hover:text-[white] hover:bg-[rgb(47,_47,_245)] hover:px-[20px] hover:py-[10px] hover:rounded-[10px] hover:[transition:background-color_0.2s_ease] hover:delay-100"
+            href="https://unai.edu"
+            >UNAI Website</a
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transformers Universe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      function openModal(src) {
+        // Set the source of the modal image
+        document.getElementById("modalImage").src = src;
+        // Show the modal
+        document.getElementById("imageModal").classList.remove("hidden");
+      }
+
+      function closeModal() {
+        // Hide the modal
+        document.getElementById("imageModal").classList.add("hidden");
+      }
+
+      // Fungsi JavaScript untuk menangani efek klik pada gambar
+      function applyClickEffect() {
+        const logo = document.querySelector(".logo");
+        logo.classList.add("clicked"); // Menambahkan kelas clicked
+
+        // Kembalikan efek setelah beberapa detik (misal 1 detik)
+        setTimeout(() => {
+          logo.classList.remove("clicked");
+        }, 1000); // Waktu untuk memulihkan efek, 1 detik
+      }
+
+      // Ensure the toggle function works after page load
+      document.addEventListener("DOMContentLoaded", function () {
+        const toggleButton = document.getElementById("navbar-toggle");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        toggleButton.addEventListener("click", function () {
+          mobileMenu.classList.toggle("hidden"); // Toggle visibility of the mobile menu
+        });
+      });
+    </script>
+  </head>
+
+  <body class="bg-gray-900 text-white font-sans">
+    <!-- Navigation -->
+    <nav
+      class="bg-gray-800 bg-opacity-90 sticky top-0 z-50 backdrop-blur-lg shadow-lg"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="relative flex items-center justify-between h-16">
+          <!-- Hamburger Icon -->
+          <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+            <button
+              id="navbar-toggle"
+              class="text-white hover:text-red-500 focus:outline-none"
+            >
+              <svg
+                class="w-6 h-6"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Main navigation links (hidden in mobile) -->
+          <div class="flex items-center justify-center w-full">
+            <ul class="hidden sm:flex space-x-6 py-4">
+              <li>
+                <a
+                  href="index.html"
+                  class="text-white hover:text-red-500 transition-colors"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href="biodata.html"
+                  class="text-white hover:text-red-500 transition-colors"
+                  >Biodata</a
+                >
+              </li>
+              <li>
+                <a
+                  href="contact_us.html"
+                  class="text-white hover:text-red-500 transition-colors"
+                  >Contact Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="posts.html"
+                  class="text-white hover:text-red-500 transition-colors"
+                  >Posts</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#autobots"
+                  class="text-white hover:text-red-500 transition-colors"
+                  >Autobots</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#decepticons"
+                  class="text-white hover:text-purple-500 transition-colors"
+                  >Decepticons</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#movies"
+                  class="text-white hover:text-yellow-500 transition-colors"
+                  >Movies</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#gallery"
+                  class="text-white hover:text-blue-500 transition-colors"
+                  >Gallery</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile menu, hidden by default -->
+      <div class="sm:hidden hidden" id="mobile-menu">
+        <ul class="space-y-4 py-4 px-6 bg-gray-800 text-white">
+          <li>
+            <a href="index.html" class="hover:text-red-500 transition-colors"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a href="biodata.html" class="hover:text-red-500 transition-colors"
+              >Biodata</a
+            >
+          </li>
+          <li>
+            <a
+              href="contact_us.html"
+              class="hover:text-red-500 transition-colors"
+              >Contact Us</a
+            >
+          </li>
+          <li>
+            <a href="posts.html" class="hover:text-red-500 transition-colors"
+              >Posts</a
+            >
+          </li>
+          <li>
+            <a href="#autobots" class="hover:text-red-500 transition-colors"
+              >Autobots</a
+            >
+          </li>
+          <li>
+            <a
+              href="#decepticons"
+              class="hover:text-purple-500 transition-colors"
+              >Decepticons</a
+            >
+          </li>
+          <li>
+            <a href="#movies" class="hover:text-yellow-500 transition-colors"
+              >Movies</a
+            >
+          </li>
+          <li>
+            <a href="#gallery" class="hover:text-blue-500 transition-colors"
+              >Gallery</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Audio Element -->
+    <audio id="background-audio" autoplay loop>
+      <source
+        src="/Mp/Mobile Legends x TRANSFORMERS 2022 BGM.mp3"
+        type="audio/mpeg"
+      />
+      Your browser does not support the audio element.
+    </audio>
+    
+    <!-- Header -->
+    <header
+      class="relative h-screen bg-cover bg-center flex items-center justify-center"
+      style="background-image: url('https://wallpapercave.com/wp/xV9VELO.jpg')"
+    >
+      <div class="absolute inset-0 bg-black bg-opacity-70"></div>
+      <div class="text-center relative z-10">
+        <h1
+          class="text-5xl md:text-7xl font-bold bg-gradient-to-r from-red-500 to-purple-500 bg-clip-text text-transparent"
+        >
+          Transformers Universe
+        </h1>
+        <img
+          src="/Picture/transformers.png"
+          alt="Transformers Logo"
+          class="logo mx-auto max-w-xs h-auto cursor-pointer transition-all transform grayscale hover:grayscale-0 active:scale-110 animate-pulse"
+        />
+        <p class="mt-4 text-lg md:text-xl text-gray-300">
+          Explore the epic battle between Autobots and Decepticons
+        </p>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto py-12 px-4 space-y-12">
+      <!-- Autobots Section -->
+      <section id="autobots">
+        <h2 class="text-4xl font-bold text-center text-red-500">Autobots</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+          <div
+            class="bg-gray-800 rounded-lg overflow-hidden shadow-lg transform transition-transform hover:scale-105"
+          >
+            <img
+              src="https://rukminim2.flixcart.com/image/850/1000/j752nww0/poster/n/q/b/large-optimus-prime-in-transformers-3-on-fine-art-paper-hd-original-imaerxzagdacjhnd.jpeg?q=90&crop=false"
+              alt="Autobot"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-4">
+              <h3 class="text-2xl font-bold text-red-500">Optimus Prime</h3>
+              <p class="mt-2 text-gray-300">
+                Leader of the Autobots, known for courage and wisdom.
+              </p>
+            </div>
+          </div>
+          <div
+            class="bg-gray-800 rounded-lg overflow-hidden shadow-lg transform transition-transform hover:scale-105"
+          >
+            <img
+              src="https://mmc.tirto.id/image/otf/640x0/2017/12/29/the-bumblebee-cinemablend.com_ratio-16x9.jpg"
+              alt="Autobot"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-4">
+              <h3 class="text-2xl font-bold text-red-500">Bumblebee</h3>
+              <p class="mt-2 text-gray-300">
+                A loyal Autobot scout with a playful personality.
+              </p>
+            </div>
+          </div>
+          <div
+            class="bg-gray-800 rounded-lg overflow-hidden shadow-lg transform transition-transform hover:scale-105"
+          >
+            <img
+              src="https://news.tfw2005.com/wp-content/uploads/sites/10/2017/05/image.jpeg"
+              alt="Autobot"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-4">
+              <h3 class="text-2xl font-bold text-red-500">Ironhide</h3>
+              <p class="mt-2 text-gray-300">
+                A loyal Autobot scout with a playful personality.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Decepticons Section -->
+      <section id="decepticons">
+        <h2 class="text-4xl font-bold text-center text-purple-500">
+          Decepticons
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+          <div
+            class="bg-gray-800 rounded-lg overflow-hidden shadow-lg transform transition-transform hover:scale-105"
+          >
+            <img
+              src="https://static0.gamerantimages.com/wordpress/wp-content/uploads/2023/06/megatron-worst-things.jpg"
+              alt="Decepticon"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-4">
+              <h3 class="text-2xl font-bold text-purple-500">Megatron</h3>
+              <p class="mt-2 text-gray-300">
+                Leader of the Decepticons, determined to conquer the universe.
+              </p>
+            </div>
+          </div>
+          <div
+            class="bg-gray-800 rounded-lg overflow-hidden shadow-lg transform transition-transform hover:scale-105"
+          >
+            <img
+              src="https://static1.cbrimages.com/wordpress/wp-content/uploads/2023/02/transformers-starscream.jpg"
+              alt="Decepticon"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-4">
+              <h3 class="text-2xl font-bold text-purple-500">Starscream</h3>
+              <p class="mt-2 text-gray-300">
+                Megatron’s scheming second-in-command.
+              </p>
+            </div>
+          </div>
+          <div
+            class="bg-gray-800 rounded-lg overflow-hidden shadow-lg transform transition-transform hover:scale-105"
+          >
+            <img
+              src="https://static1.cbrimages.com/wordpress/wp-content/uploads/2024/01/soundwave-summons-laserbeak-in-transformers-dark-of-the-moon-1.jpg"
+              alt="Decepticon"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-4">
+              <h3 class="text-2xl font-bold text-purple-500">Soundwave</h3>
+              <p class="mt-2 text-gray-300">A Loyal Decepticon.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Movies Section -->
+      <section id="movies">
+        <h2 class="text-2xl font-bold text-center text-yellow-500">Movies</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+          <div
+            class="bg-gray-800 rounded-lg overflow-hidden shadow-lg transform transition-transform hover:scale-105"
+          >
+            <img
+              src="https://m.media-amazon.com/images/M/MV5BZjM3ZDA2YmItMzhiMi00ZGI3LTg3ZGQtOTk3Nzk0MDY0ZDZhXkEyXkFqcGc@._V1_.jpg"
+              alt="Transformers Movie"
+              class="w-full h-full object-cover"
+            />
+            <div class="p-4">
+              <h3 class="text-2xl font-bold text-yellow-500">
+                Transformers (2007)
+              </h3>
+              <p class="mt-2 text-gray-300">The beginning of an epic saga.</p>
+            </div>
+          </div>
+          <div
+            class="bg-gray-800 rounded-lg overflow-hidden shadow-lg transform transition-transform hover:scale-105"
+          >
+            <img
+              src="https://m.media-amazon.com/images/M/MV5BNjk4OTczOTk0NF5BMl5BanBnXkFtZTcwNjQ0NzMzMw@@._V1_FMjpg_UX1000_.jpg"
+              alt="Transformers Movie"
+              class="w-full h-full object-cover"
+            />
+            <div class="p-4">
+              <h3 class="text-2xl font-bold text-yellow-500">
+                Revenge of the Fallen (2009)
+              </h3>
+              <p class="mt-2 text-gray-300">
+                The battle intensifies as secrets are revealed.
+              </p>
+            </div>
+          </div>
+          <div
+            class="bg-gray-800 rounded-lg overflow-hidden shadow-lg transform transition-transform hover:scale-105"
+          >
+            <img
+              src="https://m.media-amazon.com/images/M/MV5BMTkwOTY0MTc1NV5BMl5BanBnXkFtZTcwMDQwNjA2NQ@@._V1_.jpg"
+              alt="Transformers Movie"
+              class="w-full h-full object-cover"
+            />
+            <div class="p-4">
+              <h3 class="text-2xl font-bold text-yellow-500">
+                Dark of the Moon (2011)
+              </h3>
+              <p class="mt-2 text-gray-300">
+                The Autobots race to save the planet.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Gallery Section -->
+      <section id="gallery" class="py-12">
+        <h2 class="text-4xl font-bold text-center text-blue-500">Gallery</h2>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8">
+          <!-- Example Image 1 -->
+          <div
+            class="h-48 w-full overflow-hidden rounded-lg bg-gray-800 hover:scale-105 hover:shadow-xl transition-all duration-300"
+          >
+            <img
+              src="https://wallpapercave.com/wp/wp4639244.jpg"
+              alt="Gallery Image"
+              class="h-full w-full object-cover transform hover:scale-105 transition-transform cursor-pointer"
+              onclick="openModal(this.src)"
+            />
+          </div>
+          <!-- Example Image 2 -->
+          <div
+            class="h-48 w-full overflow-hidden rounded-lg bg-gray-800 hover:scale-105 hover:shadow-xl transition-all duration-300"
+          >
+            <img
+              src="https://wallpapercave.com/wp/wp4639257.jpg"
+              alt="Gallery Image"
+              class="h-full w-full object-cover transform hover:scale-105 transition-transform cursor-pointer"
+              onclick="openModal(this.src)"
+            />
+          </div>
+          <!-- Example Image 3 -->
+          <div
+            class="h-48 w-full overflow-hidden rounded-lg bg-gray-800 hover:scale-105 hover:shadow-xl transition-all duration-300"
+          >
+            <img
+              src="https://wallpapercave.com/wp/wp4639227.jpg"
+              alt="Gallery Image"
+              class="h-full w-full object-cover transform hover:scale-105 transition-transform cursor-pointer"
+              onclick="openModal(this.src)"
+            />
+          </div>
+          <!-- Example Image 4 -->
+          <div
+            class="h-48 w-full overflow-hidden rounded-lg bg-gray-800 hover:scale-105 hover:shadow-xl transition-all duration-300"
+          >
+            <img
+              src="https://wallpapercave.com/wp/wp6056536.jpg"
+              alt="Gallery Image"
+              class="h-full w-full object-cover transform hover:scale-105 transition-transform cursor-pointer"
+              onclick="openModal(this.src)"
+            />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Modal -->
+    <div
+      id="imageModal"
+      class="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50 hidden"
+    >
+      <img
+        id="modalImage"
+        src=""
+        alt="Full View"
+        class="max-w-full max-h-full object-contain"
+      />
+      <button
+        onclick="closeModal()"
+        class="absolute top-4 right-8 text-white text-4xl hover:text-red-400"
+      >
+        ×
+      </button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-6">
+      <p class="text-center text-gray-400 text-sm">
+        &copy; 2024 Transformers Universe. All Rights Reserved.
+      </p>
+    </footer>
+  </body>
+</html>
